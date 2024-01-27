@@ -1,0 +1,22 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  //database connection string
+  // user id, password, server name
+  //postgresql://userID:password@serverPath:portNumber
+  url      = "postgresql://root:P@ssW0rd!@localhost:5432/test?connect_timeout=300"
+}
+
+model users {
+  id String @id @default(uuid())
+  name String
+  email String
+  mobile String
+  address String
+}
